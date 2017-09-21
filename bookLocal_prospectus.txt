@@ -9,23 +9,16 @@
 
 
 % ******************** TITLE ********************
-\author{
-  Sardor Umarov\\
-  \texttt{sardoru@gmail.com}
-  \and
-  Stephen Lee\\
-  \texttt{smlee.981@gmail.com}
-}
 \title{BookLocal}
 
 \begin{document}
 
 \maketitle
 
-% ******************** ABSTRACT ********************
-\begin{abstract}
 
-\end{abstract}
+\begin{flushleft}
+\centering PROSPECTUS
+\end{flushleft}
 
 % ******************** TOC ********************
 \newpage
@@ -35,13 +28,41 @@
 
 % ******************** WHAT ********************
 \section{What}
-The vision for BookLocal is to connect travelers directly to their hotel of choice by creating the first global property management system (gPMS). This allows for three key benefits: a simplified interface experience; lower room prices; and higher profits for the hotels.
+The vision for BookLocal is to connect travelers directly to their hotel of choice by creating the first two way property management system accessible as both a traveler and a hotel worker. Simply put, BookLocal is designed to remove middlemen from the hotel ecosystem and serve as the single point of contact. Successful implementation allows for three key benefits: simplified user experiences; lower room prices; and higher profits.
 
 \begin{flushleft}
-BookLocal will be built on the Ethereum blockchain to provide a secure payment platform...
-
-
+At its heart, BookLocal will operate as a series of smart contracts stored on the Ethereum blockchain. To interact with the application, special interfaces for both hotel workers and travelers will be designed to provide full service functionality and replace glaring inefficiencies in the current ecosystem.
 \end{flushleft}
+
+\begin{flushleft}
+To the traveler, BookLocal will provide the following features:
+\begin{itemize}
+ \item search;
+ \item compare;
+ \item book; and
+ \item purchase.
+\end{itemize}
+\end{flushleft}
+
+\begin{flushleft}
+To the hotel, BookLocal will provide modules for:
+\begin{itemize}
+ \item guest management;
+ \item housekeeping and maintainance;
+ \item revenue management;
+ \item payment processor and point of sale;
+ \item report generators;
+ \item dispute resolution; and
+ \item channel management.
+\end{itemize}
+\end{flushleft}
+
+
+\begin{flushleft}
+The layout of this paper provides the motivation for BookLocal in section 2, a description of the current ecosystem in section 3, a detailed account of the features we will provide in section 4, and the steps toward full implementation in section 5.
+\end{flushleft}
+
+
 % ******************** WHY ********************
 \newpage
 \section{Why}
@@ -50,7 +71,7 @@ To understand the motivation for BookLocal we identify a few key issues with the
 \subsection{Problems}
 The hotel booking industry is fragmented with no fewer than five different groups working for commission between travelers and hotels. Problems include:
 
-\subsubsection*{High commission payments}
+\subsubsection*{High commission payments.}
   	\begin{itemize}
 	 \item Online travel agents (OTA) receive 15-25\% commission per room.
 	 \item Other necessary software packages (i.e. channel manager and property management systems) also require monthly usage fees.
@@ -60,7 +81,7 @@ The hotel booking industry is fragmented with no fewer than five different group
     	\begin{itemize}
 	 \item \underline{\textit{Last available room}} clause requires hotels to give the OTA access their last room(s) when near capacity. Because of the high commission rates, this can cause hotels to pass on revenue from more profitable booking options (i.e. last minute walk-ins).
 	 \item \underline{\textit{Rate parity}} clause forbids the hotel from renting a room at a lower price through any other source, including their own website, from which they could charge a lower price to the traveler and still receive higher profit.
-	 \item \underline{\textit{Blanket use of marketing rights}} allows an OTA to bid on google ad-words for higher listing than the hotel's brand website.
+	 \item \underline{\textit{Blanket use of trademark rights}} allows an OTA to bid on google ad-words for higher listing than the hotel's brand website.
 	\end{itemize}
  \subsubsection*{Fragmented computer systems.}
     	\begin{itemize}
@@ -147,7 +168,7 @@ Channel management software allows the hotel to automatically update their avail
 The hotel's property management system (PMS) refers to any piece of software designed to help manage the daily requirements of running a hotel. At it's most basic, a PMS will include functions to manage guest arrivals and departures and then generate the necessary reports for auditing. More advanced systems can include a housekeeping module, payment processor, and revenue management tools.
 \begin{itemize}
  \item \underline{\textit{Value:}} A good property management system can make the life of a hotelier much easier by automating and centralizing many of the daily operations.
-  \item \underline{\textit{Cost:}}
+  \item \underline{\textit{Cost:}} A lack of customization and complicated interfaces makes it difficult to train new workers.
   \end{itemize}
 
 
@@ -179,9 +200,9 @@ When the traveler has found a room they like, they can book the room in one of s
 \begin{itemize}
  \item Send exactly the asking rate.
  \item Send more than the asking rate and use the BookLocal wallet to pay for food and activities during the trip. This works as a budgeting commitment device to ensure you don't overspend during your trip.
- \item Send some amount less than the upfront asking rate (if booking well in advance) to hold your room for a period of time. This will likely require the remainder to be paid closer to the actual date and potentially this option will ultimately cost more. Basically any user paying in full upfront would receive some discount compared to those who want to book in advance without paying in full.
+ \item Send some amount less than the upfront asking rate (if booking well in advance) to hold your room for a period of time. This will likely require the remainder to be paid closer to the actual date and potentially this option will ultimately cost more. Basically any user paying in full upfront would ideally receive some discount compared to those who want to book in advance without paying in full.
 \end{itemize}
-No matter which option the traveler chooses, each new reservation will create a plasma side chain that can only be edited by the hotel and the guest. Upon checkout the final balances are recorded and the chain will be terminated. Use of a plasma chain for each guest will afford the option of selling their trip data to interested parties.
+No matter which option the traveler chooses, each new reservation will create a plasma side chain (or state channel) that can only be edited by the hotel and the guest. Upon checkout the final balances are recorded and the chain will be terminated. Use of a plasma chain for each guest would afford the option of selling their detailed trip data to interested parties.
 
 \begin{flushleft}
 Since the act of booking a room will change the availability and options for other travelers, each transaction with this function will require updating data on the BookLocal plasma chain.
@@ -201,16 +222,16 @@ The hotel interface will require the following functionality:
 Guest management includes managing arrivals and departures with any special requests. Sub features involve messaging capability between the guest and hotel and different views to see arrivals and departures for different time scales (i.e. monthly view, weekly view, daily view, and so on).
 
 \subsubsection{Housekeeping}
-The housekeeping module will include messaging capabilities, room specific cleaning details, requests for supplies and maintenance repairs.
+The housekeeping module will include messaging capabilities, room specific cleaning details, a scheduled order and cleaning assignments, and requests for supplies and maintenance repairs.
 
 \subsubsection{Revenue Management}
 Revenue management will act as a recommendation system to provide different pricing options during peak hours or otherwise. For the first time in history, the utilization of smart contracts can allow for conditional price setting (i.e. if time is after 10 pm then room rate equals \$80, else room rate equals \$100).
 
 \subsubsection{Payment Processor}
-Upon checkout, BookLocal will finalize the guest's plasma chain, record the final balances, and transfer funds accordingly.
+Upon checkout, BookLocal will finalize the guest's plasma chain, record the final balances, and transfer funds accordingly. Needs to seamlessly work for someone using a credit card through an OTA. Inventory management and point of sale.
 
 \subsubsection{Report Generator}
-Report generation will include any industry specific metrics used during the night audits as well as some real time key performance indicators.
+Report generation will include industry specific metrics used during the night audits as well as some real time key performance indicators.
 
 \subsubsection{Dispute Resolution}
 In case of a disputed room charge or rate, the guest or hotel can open a dispute. Both the guest and hotel will have one week to submit their claim after which BookLocal will make the final decision. Here the guest's plasma chain stays open and unresolved until BookLocal's decision.
@@ -226,13 +247,12 @@ In order to feasibly integrate into the current ecosystem, BookLocal will need a
 % ******************** STEPS ********************
 \newpage
 \section{Steps}
-\subsection{Vision}
 \subsection{Exchange Hotel}
-The Exchange Building in Memphis, Tennessee will host the first versions of BookLocal.
+The Exchange Building in Memphis, Tennessee will host the first version of BookLocal as it's own proprietary property management system.
 \subsection{Independent Hotels}
-Once the BookLocal platform is successfully tested at the Exchange, we plan to open up our application to other independent hotels.
+Once the BookLocal platform is successfully tested at the Exchange, we will open up the application for use at other independent hotels.
 \subsection{Chain Hotels}
-Finally, we will permissioned network features to accommodate chain hotels.
+Finally, we will add special permission features to accommodate information sharing for hotel chains.
 
 
 \end{document}
