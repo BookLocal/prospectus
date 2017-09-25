@@ -7,14 +7,12 @@
 \usepackage{float}
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
-
 % ******************** TITLE ********************
 \title{BookLocal}
 
 \begin{document}
 
 \maketitle
-
 
 \begin{flushleft}
 \centering PROSPECTUS
@@ -90,7 +88,6 @@ The hotel booking industry is fragmented with no fewer than five different group
 	\end{itemize}
 
 
-
 \subsection{Solution}
 BookLocal will design a platform that incorporates the best features of the current system while omitting unnecessary middlemen.
 
@@ -110,7 +107,6 @@ BookLocal will design a platform that incorporates the best features of the curr
  \item Integrating features into a single system will put the guest and hotel in direct contact by removing unnecessary middlemen.
 \end{itemize}
 
-
 % ******************** WHO ********************
 \newpage
 \section{Who}
@@ -122,6 +118,7 @@ Below is a visual representation of the various paths through which a traveler c
 \begin{figure}[H]
 \centering
 \includegraphics[width = \textwidth]{hotelEcosystem.pdf}
+\caption{Current Ecosystem}
 \label{fig1}
 \end{figure}
 
@@ -135,17 +132,12 @@ Travel agents appeared first as an intermediary between travelers and hotels in 
  \item \underline{\textit{Cost:}} Conflicts of interest may arise when the travel agent is secretly incentivized by higher paying hotels. In these cases, the traveler may not receive the best available deal for their preferences.
 \end{itemize}
 
-
-
-
 \subsubsection{Global Distribution System (GDS)}
 Global distribution systems originally began in the airline industry (eAAsy Sabre) to provide a central platform for airlines and travel agents to aggregate flight data. By 1991, the Hotel Reservation Network (now Hotels.com) was founded to extend this idea directly to the customer for hotel bookings using a toll-free phone number. Currently, global distribution systems are largely outdated and seeking ways to reinvent themselves since online travel agents are now able to bypass their networks and work directly with the service providers (i.e hotels, airlines, and rental car companies).
 \begin{itemize}
  \item \underline{\textit{Value:}} The benefit of a global distribution system lies in it's network and the consequent ability to bundle airline deals with hotel and car rental service providers. However, online travel agents (OTAs) are now able to provide the same service directly to the traveler which has left global distribution systems looking for ways to stay relevant.
  \item \underline{\textit{Cost:}} Availability and pricing information can be slow and spotty since global distribution systems typically act between service providers and travel agents rather than communicating directly with the travelers.
 \end{itemize}
-
-
 
 \subsubsection{Online Travel Agent (OTA)}
 Online travel agents represent the most dramatic change to the travel industry in the last decade. Initially, OTAs tapped directly into the GDS networks to find availabilities and sell directly to the interested traveler, however, channel management software packages now allow OTAs the option of bypassing the GDS and learning of availability information directly from the hotel or other service provider. While much of this has truly improved the travelers experience only two main parent companies currently exist - Priceline Group and Expedia Inc. - each with many subsidiary companies that creates the illusion of competion. This duopoly has predictably led to high commission rates and uneven legal agreements, the burden of which is shared by the hotel and the traveler in the form of lower profit and higher rates.
@@ -154,15 +146,12 @@ Online travel agents represent the most dramatic change to the travel industry i
  \item \underline{\textit{Cost:}} High commission rates charged by OTAs and various payment reconciliation methods add costs to the hotel which ultimately falls, at least in part, to the traveler. Further, booking through an OTA complicates the resolution of any disputes between the hotel and traveler (i.e. if a traveler is unsatisfied with the room and wants a discount they often must go through the OTA rather than working directly with hotel management). And finally, the sheer size of the two main OTAs allow for uneven and inconsistent legal agreements.
 \end{itemize}
 
-
 \subsubsection{Channel Manager}
 Channel management software allows the hotel to automatically update their availability and pricing information across their distribution network. This technology relies on two-way XML communication to push and pull data between the hotel's property management system and various booking platforms (i.e. online travel agents, global distribution system, direct booking through hotel's website) to help prevent over booking. It was the advent of this ability that ultimately allowed online travel agencies to bypass the global distribution system's information network and take hold of the market.
 \begin{itemize}
  \item \underline{\textit{Value:}} Automates much of the hotel's inventory planning and centralizes access to various distribution channels.
   \item \underline{\textit{Cost:}} Most channel management companies operate on the software as a service (SaaS) model which further increases the hotel's operating cost and adds complexity into the hotel ecosystem.
   \end{itemize}
-
-
 
 \subsubsection{Property Management System (PMS)}
 The hotel's property management system (PMS) refers to any piece of software designed to help manage the daily requirements of running a hotel. At it's most basic, a PMS will include functions to manage guest arrivals and departures and then generate the necessary reports for auditing. More advanced systems can include a housekeeping module, payment processor, and revenue management tools.
@@ -171,6 +160,21 @@ The hotel's property management system (PMS) refers to any piece of software des
   \item \underline{\textit{Cost:}} A lack of customization and complicated interfaces makes it difficult to train new workers.
   \end{itemize}
 
+\newpage
+
+\subsection{Proposed Ecosystem}
+Since BookLocal will act as a property management system, channel manager, and payment processor for the hotel and provide metasearch capabilities for the traveler, much of the current ecosystem can be bypassed. As such, figure \ref{bl} represents our vision for the first stage of implementation.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = \textwidth]{bookLocal_Ecosystem.pdf}
+\caption{Proposed ecosystem}
+\label{bl}
+\end{figure}
+
+\begin{flushleft}
+Note that BookLocal seeks to be fully compatible with current online travel agencies in order to provide seamless integration for early-adopting hotels and late-adopting travelers.
+\end{flushleft}
 
 % ******************** HOW ********************
 \newpage
@@ -183,8 +187,6 @@ BookLocal will maintain it's own plasma subchain to handle the bulk of the trans
 \centering
 \includegraphics[width = \textwidth]{bookLocal_dataLayers.pdf}
 \end{figure}
-
-
 
 \subsection{Traveler}
 With BookLocal the traveler will be able to search, compare, and book a hotel room. Additionally, we will incorporate a wallet feature that lets the guest use their phone to pay for dinner, events, or other travel related activities.
@@ -215,33 +217,29 @@ The purchase function will act as a simple wallet enabling the guest to pay for 
 To give an example: let's say a traveler is willing to spend at most \$400 for a day and night in Paris. They use BookLocal to find a hotel that costs \$100 per night and decide to book. Since they already know their desired budget for the weekend they book by transferring all \$400 to the BookLocal holding address. A new subchain is created for their stay and includes \$300 in the wallet to spend in Paris (\$400 less \$100 for room assuming no tax or security deposit). Now they are able to use their BookLocal app to eat, shop, go to museums, and so on. If at the end of their trip they only spent \$250 in total (including room) and there are no room disputes or damages, then the remaining \$150 that they didn't spend will be immediately returned to them upon checkout.
 \end{flushleft}
 
-
 \subsection{Hotel}
 The hotel interface will require the following functionality:
+
 \subsubsection{Guest Management}
 Guest management includes managing arrivals and departures with any special requests. Sub features involve messaging capability between the guest and hotel and different views to see arrivals and departures for different time scales (i.e. monthly view, weekly view, daily view, and so on).
 
-\subsubsection{Housekeeping}
+\subsubsection{Housekeeping and Maintenance}
 The housekeeping module will include messaging capabilities, room specific cleaning details, a scheduled order and cleaning assignments, and requests for supplies and maintenance repairs.
 
 \subsubsection{Revenue Management}
 Revenue management will act as a recommendation system to provide different pricing options during peak hours or otherwise. For the first time in history, the utilization of smart contracts can allow for conditional price setting (i.e. if time is after 10 pm then room rate equals \$80, else room rate equals \$100).
 
 \subsubsection{Payment Processor}
-Upon checkout, BookLocal will finalize the guest's plasma chain, record the final balances, and transfer funds accordingly. Needs to seamlessly work for someone using a credit card through an OTA. Inventory management and point of sale.
+Upon checkout, BookLocal will finalize the guest's plasma chain, record the final balances, and transfer funds accordingly. This module will need to work seamlessly for someone paying with a credit card and incorporate a point of sale system with inventory management for hotel purchases (i.e. drinks, snacks, toiletry items, and so on).
 
 \subsubsection{Report Generator}
-Report generation will include industry specific metrics used during the night audits as well as some real time key performance indicators.
+This module will generate industry specific reports used during night audits as well as provide real time key performance indicators.
 
 \subsubsection{Dispute Resolution}
-In case of a disputed room charge or rate, the guest or hotel can open a dispute. Both the guest and hotel will have one week to submit their claim after which BookLocal will make the final decision. Here the guest's plasma chain stays open and unresolved until BookLocal's decision.
+In case of a disputed room charge or rate, the guest or hotel can open a dispute. Both the guest and hotel will have a specified amount of time (i.e. two-weeks) to submit their claim after which BookLocal will make the final decision. Here the guest's subchain stays open and unresolved until BookLocal's decision.
 
 \subsubsection{Channel Management}
-In order to feasibly integrate into the current ecosystem, BookLocal will need a channel management feature that allows travelers to book through an online travel agency while still maintaining functionality for the hotel.
-
-
-
-
+In order to feasibly integrate into the current ecosystem, BookLocal will include channel management functionality to allow travelers the option of booking through an online travel agency while still creating a guest specific subchain on the BookLocal subchain.
 
 
 % ******************** STEPS ********************
@@ -252,7 +250,7 @@ The Exchange Building in Memphis, Tennessee will host the first version of BookL
 \subsection{Independent Hotels}
 Once the BookLocal platform is successfully tested at the Exchange, we will open up the application for use at other independent hotels.
 \subsection{Chain Hotels}
-Finally, we will add special permission features to accommodate information sharing for hotel chains.
+Finally, we will target chain hotels by adding permissioned information sharing features.
 
 
 \end{document}
@@ -265,41 +263,6 @@ Finally, we will add special permission features to accommodate information shar
 \caption{}
 \end{figure}
 
-% Equations
-\begin{align}
-\begin{split}
-\end{split}
-\end{align}
-
 % Paragraph
 \begin{flushleft}
 \end{flushleft}
-
-% Fancy
-\begin{equation}
-\mathcal{L}(T,B,\lambda) =
-\end{equation}
-
-% Partials
-\begin{align}
-\frac{\partial \mathcal{L}}{\partial T} &=
-\frac{\partial \mathcal{L}}{\partial B} &=
-\frac{\partial \mathcal{L}}{\partial \lambda} &=
-\end{align}
-
-% Piecewise
- \begin{displaymath}
-   function = \left\{
-     \begin{array}{lr}
-       0 & \quad P\textsubscript{C} < P\textsubscript{P}\\
-       U\textsubscript{0} & \quad  P\textsubscript{C} > P\textsubscript{P}
-     \end{array}
-   \right.
-\end{displaymath}
-
-% **********************Booklocal ***************************
-
-
-% **********************New commands (bullets) ***************************
-\renewcommand{\labelitemi}{$\textendash$}
-\renewcommand{\labelitemii}{$\square$}
