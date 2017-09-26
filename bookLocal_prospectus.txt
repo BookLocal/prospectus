@@ -26,10 +26,10 @@
 
 % ******************** WHAT ********************
 \section{What}
-The vision for BookLocal is to connect travelers directly to their hotel of choice by creating the first two way property management system accessible as both a traveler and a hotel worker. Simply put, BookLocal is designed to remove middlemen from the hotel ecosystem and serve as the single point of contact. Successful implementation allows for three key benefits: simplified user experiences; lower room prices; and higher profits.
+The vision for BookLocal is to connect travelers directly to their hotel of choice by creating the first two way property management system accessible as both a traveler and a hotel administrator. Simply put, BookLocal is designed to remove middlemen from the hotel ecosystem and serve as the single point of contact. Successful implementation allows for three key benefits: simplified user experiences; lower room prices for the traveler; and higher profits for the hotel.
 
 \begin{flushleft}
-At its heart, BookLocal will operate as a series of smart contracts stored on the Ethereum blockchain. To interact with the application, special interfaces for both hotel workers and travelers will be designed to provide full service functionality and replace glaring inefficiencies in the current ecosystem.
+At its heart, BookLocal will operate as a series of smart contracts stored on the Ethereum blockchain. To interact with the application, special interfaces for both hotel workers and travelers will be designed to provide full service functionality and replace inefficiencies in the current ecosystem.
 \end{flushleft}
 
 \begin{flushleft}
@@ -49,8 +49,7 @@ To the hotel, BookLocal will provide modules for:
  \item housekeeping and maintainance;
  \item revenue management;
  \item payment processor and point of sale;
- \item report generators;
- \item dispute resolution; and
+ \item report generator; and
  \item channel management.
 \end{itemize}
 \end{flushleft}
@@ -89,7 +88,7 @@ The hotel booking industry is fragmented with no fewer than five different group
 
 
 \subsection{Solution}
-BookLocal will design a platform that incorporates the best features of the current system while omitting unnecessary middlemen.
+BookLocal will design a platform that incorporates the best features of the current system while omitting middlemen.
 
 \subsubsection*{Brand new revenue structure.}
 \begin{itemize}
@@ -167,7 +166,7 @@ Since BookLocal will act as a property management system, channel manager, and p
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = \textwidth]{bookLocal_Ecosystem.pdf}
+\includegraphics[width = .9\textwidth]{bookLocal_Ecosystem.pdf}
 \caption{Proposed ecosystem}
 \label{bl}
 \end{figure}
@@ -214,7 +213,7 @@ Since the act of booking a room will change the availability and options for oth
 The purchase function will act as a simple wallet enabling the guest to pay for food, drinks, and events in the local ecosystem.
 
 \begin{flushleft}
-To give an example: let's say a traveler is willing to spend at most \$400 for a day and night in Paris. They use BookLocal to find a hotel that costs \$100 per night and decide to book. Since they already know their desired budget for the weekend they book by transferring all \$400 to the BookLocal holding address. A new subchain is created for their stay and includes \$300 in the wallet to spend in Paris (\$400 less \$100 for room assuming no tax or security deposit). Now they are able to use their BookLocal app to eat, shop, go to museums, and so on. If at the end of their trip they only spent \$250 in total (including room) and there are no room disputes or damages, then the remaining \$150 that they didn't spend will be immediately returned to them upon checkout.
+To give an example: let's say a traveler, Ann, is willing to spend at most \$400 for a day and night in Paris. She uses BookLocal to find a hotel that costs \$100 per night and decide to book. Since she already knows her desired budget for the weekend, she chooses to book the room by transferring all \$400 to the BookLocal holding address. A new subchain is created for her stay which now includes \$300 in the wallet to spend in Paris (\$400 less \$100 for room). Now Ann is able to use the BookLocal app to eat, shop, go to museums, and so on. If at the end of her trip she only spent \$250 in total (including room), and there are no room disputes or damages, then the remaining \$150 that she didn't spend will be immediately returned to her upon checkout.
 \end{flushleft}
 
 \subsection{Hotel}
@@ -235,11 +234,11 @@ Upon checkout, BookLocal will finalize the guest's plasma chain, record the fina
 \subsubsection{Report Generator}
 This module will generate industry specific reports used during night audits as well as provide real time key performance indicators.
 
-\subsubsection{Dispute Resolution}
-In case of a disputed room charge or rate, the guest or hotel can open a dispute. Both the guest and hotel will have a specified amount of time (i.e. two-weeks) to submit their claim after which BookLocal will make the final decision. Here the guest's subchain stays open and unresolved until BookLocal's decision.
-
 \subsubsection{Channel Management}
 In order to feasibly integrate into the current ecosystem, BookLocal will include channel management functionality to allow travelers the option of booking through an online travel agency while still creating a guest specific subchain on the BookLocal subchain.
+
+\subsection{Dispute}
+In case of a disputed room charge or rate, the guest or hotel can open a dispute. Both the guest and hotel will have a specified amount of time (i.e. two-weeks) to submit their claim after which BookLocal will make the final decision. Here the guest's subchain stays open and unresolved until BookLocal's decision.
 
 
 % ******************** STEPS ********************
