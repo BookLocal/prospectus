@@ -252,25 +252,25 @@ Below are the key benchmarks toward full adoption.
 \subsection{The Exchange Building}
 The Exchange Building in Memphis, Tennessee will host the first version of BookLocal as it's own proprietary property management system. 
 
-\subsubsection*{Proof of Concept}
+\subsubsection{Proof of Concept}
 
 \begin{flushleft}
 We propose a rentable token model (as described in ERC-809) that extends the non-fungible token model (introduced in ERC-721) to provide external access to the token's ``rent'' status. In essence, our model applied to a hotel does the following: 
 
-\begin{enumerate}
+\begin{itemize}
 \item Define ``Room'' as a structure consisting of an owner address, renter address, and optional room descriptions. 
 \item Store list of reservations that, 1) map each room to a time, and 2) maps each time to a renter. 
 \item Allow an address (with a current reservation) to update the ``renter`` status of a specific room. 
-\end{enumerate} 
+\end{itemize} 
 
-The contracts for the proof of concept (written in solidity) are available online at .
+The contracts for the proof of concept (written in solidity) are available online\footnote{https://github.com/BookLocal/proofOfConcept.}
 
 \end{flushleft}
 
-\subsubsection*{Minimum Viable Product}
+\subsubsection{Minimum Viable Product}
 The minimum viable product will extend the Proof of Concept to incorporate full payment functionality and user interfaces. 
 
-\begin{enumerate}
+\begin{itemize}
 \item{\textbf{Multisignature Wallets}} \\
 To ensure secure payments, we will use industry standard code for our multisignature wallet. 
 
@@ -293,15 +293,17 @@ Each ``Hotel'' object inherits functions from a standard multisignature wallet i
   \item hide(\_roomId)
  \end{itemize}
  
-\end{enumerate}
+\end{itemize}
 
 \subsection{Early Adopters}
-Once the BookLocal platform is successfully tested at the Exchange Building, we will market the application for use by travelers, independent hotels, and individuals with extra space. Toward this end, our goal is to provide a free interface for individuals who want to host a room (a la. AirBnB) while providing hotels with their own custom property management system. All of this while providing a beautiful and intuitive experience for adventurous travelers.
+Once the BookLocal platform is successfully tested at the Exchange Building, we will market the application for use by travelers, independent hotels, and individuals with extra space. Toward this end, our goal is to provide a free interface for individuals who want to host a room (a la. AirBnB) while providing hotels with their own custom property management system at a service cost. 
 
-\subsubsection*{Free interface for individual hosts.}
+\subsubsection{Free interface for travelers.}
+
+\subsubsection{Free interface for individual hosts.}
 In order to encourage adoption, we will provide an interface for individual hosts to rent access to their space (based on the AirBnB model).  
 
-\subsubsection*{Paid interface for hotels.}
+\subsubsection{Paid interface for hotels.}
 
 
 \subsection{More Adopters}
