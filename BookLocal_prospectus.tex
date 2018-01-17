@@ -167,13 +167,13 @@ Since BookLocal will act as a property management system, channel manager, and p
 
 \begin{figure}[H]
 \centering
-\includegraphics[width = .9\textwidth]{bookLocal_ecosystem2.pdf}
-\caption{Expanded view.}
+\includegraphics[width = .9\textwidth]{bookLocal_ecosystem3.pdf}
+\caption{BookLocal ecosystem}
 \label{bl}
 \end{figure}
 
 \begin{flushleft}
-Note that BookLocal seeks to be fully compatible with current online travel agencies in order to provide seamless integration for early-adopting hotels and late-adopting travelers.
+Note that BookLocal seeks to be fully compatible with current online travel agencies in order to provide seamless integration for early-adopting hotels and late-adopting travelers. 
 \end{flushleft}
 
 
@@ -183,7 +183,27 @@ Note that BookLocal seeks to be fully compatible with current online travel agen
 \section{How}
 The heart of BookLocal will reside in a series of smart contracts on the public Ethereum blockchain. 
 \subsection{Data}
+\begin{flushleft}
+BookLocal allows travelers to connect directly to the Hotel by way of the room. Figure \ref{blExp} below represents this flow of information for a simple ecosystem consisting of three hotels and three successful travelers. 
+\end{flushleft}
+
+Take note of the following systems: 
+\begin{itemize}
+\item BookLocal API
+\item Hotel PMS
+\item Guest Interface
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width = .9\textwidth]{bookLocal_ecosystem2.pdf}
+\caption{Expanded BookLocal ecosystem}
+\label{blExp}
+\end{figure}
+
+\begin{flushleft}
 The ultimate goal for BookLocal is to maintain it's own plasma subchain (or similar off-chain solution) to handle the bulk of the transactional data. This works to reduce the number of updates to the main Ethereum chain and thus save in transaction fees and increase speed. Further, upon making a reservation, a new subchain (or payment channel) could be created for the hotel guest (a traveler who commits to a hotel becomes a guest) and will terminate upon checkout whereby the final balances are settled. Visually we represent the flow of data below:
+\end{flushleft}
 
 \begin{figure}[H]
 \centering
@@ -255,12 +275,12 @@ The Exchange Building in Memphis, Tennessee will host the first version of BookL
 \subsubsection{Proof of Concept}
 
 \begin{flushleft}
-We propose a rentable token model (as described in ERC-809) that extends the non-fungible token model (introduced in ERC-721) to provide external access to the token's ``rent'' status. In essence, our model applied to a hotel does the following: 
+We proposed a rentable token model (ERC-809) that extends a non-fungible token (as introduced in ERC-721) to provide temporary access for non-owners. Applied to a hotel, our model does the following: 
 
 \begin{itemize}
-\item Define ``Room'' as a structure consisting of an owner address, renter address, and optional room descriptions. 
-\item Store list of reservations that, 1) map each room to a time, and 2) maps each time to a renter. 
-\item Allow an address (with a current reservation) to update the ``renter`` status of a specific room. 
+\item Defines ``Room'' as a structure consisting of an owner address, renter address, and optional room attributes. 
+\item Stores a list of reservations that, 1) map each room to a time, and 2) maps each time to a renter. 
+\item Allows the appropriate traveler (with a current reservation) to update the ``renter'' address of a specific room. 
 \end{itemize} 
 
 The contracts for the proof of concept (written in solidity) are available online\footnote{https://github.com/BookLocal/proofOfConcept.}
@@ -285,7 +305,7 @@ Each ``Traveler'' object inherits functions from a standard wallet. Thus, the mi
  \end{itemize}
  
 \item{\textbf{Hotel Interface}} \\
-Each ``Hotel'' object inherits functions from a standard multisignature wallet in order to appropriately handle payments being sent to the contract. In addition to base wallet features, the Hotel will also have access to all methods callable by the traveler (as listed above). Thus, the minimum viable interface for a hotel will extend these include the following methods: 
+Each ``Hotel'' object inherits functions from a standard multisignature wallet in order to appropriately handle payments being sent to the contract. In addition to base wallet features, the Hotel will also have access to all methods callable by the traveler (as listed above) with special owner permissions. Further, the minimum viable interface for a hotel will also include the following methods: 
  \begin{itemize}
   \item newRoom()
   \item changeDescription(\_roomId) 
@@ -296,7 +316,7 @@ Each ``Hotel'' object inherits functions from a standard multisignature wallet i
 \end{itemize}
 
 \subsection{Early Adopters}
-Once the BookLocal platform is successfully tested at the Exchange Building, we will market the application for use by travelers, independent hotels, and individuals with extra space. Toward this end, our goal is to provide a free interface for individuals who want to host a room (a la. AirBnB) while providing hotels with their own custom property management system at a service cost. 
+Once the BookLocal platform is successfully tested at the Exchange Building, we will market the application for use by travelers, independent hotels, and individuals with extra space. Toward this end, our goal is to provide a free interface for travelers and other individuals who want to host a room (a la. AirBnB), while providing hotels with their own custom property management system at a service cost. 
 
 \subsubsection{Free interface for travelers.}
 
