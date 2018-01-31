@@ -46,7 +46,7 @@ To the traveler, BookLocal will provide the following features:
 To the hotel, BookLocal will provide modules for:
 \begin{itemize}
  \item guest management;
- \item housekeeping and maintainance;
+ \item housekeeping and maintenance;
  \item revenue management;
  \item payment processor and point of sale;
  \item report generator; and

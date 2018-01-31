@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}What}{3}{section.1}
+\contentsline {section}{\numberline {2}Why}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Problems}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Solution}{5}{subsection.2.2}
+\contentsline {section}{\numberline {3}Who}{6}{section.3}
+\contentsline {subsection}{\numberline {3.1}Ecosystem}{6}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Players}{6}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Travel Agent}{6}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Global Distribution System (GDS)}{7}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Online Travel Agent (OTA)}{7}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Channel Manager}{8}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Property Management System (PMS)}{8}{subsubsection.3.2.5}
+\contentsline {subsection}{\numberline {3.3}Proposed Ecosystem}{9}{subsection.3.3}
+\contentsline {section}{\numberline {4}How}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Data}{10}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Traveler}{11}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Search}{11}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Compare}{11}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Book}{11}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Purchase}{12}{subsubsection.4.2.4}
+\contentsline {subsection}{\numberline {4.3}Hotel}{12}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Guest Management}{12}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Housekeeping and Maintenance}{12}{subsubsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.3}Revenue Management}{13}{subsubsection.4.3.3}
+\contentsline {subsubsection}{\numberline {4.3.4}Payment Processing}{13}{subsubsection.4.3.4}
+\contentsline {subsubsection}{\numberline {4.3.5}Report Generation}{13}{subsubsection.4.3.5}
+\contentsline {subsubsection}{\numberline {4.3.6}Channel Management}{13}{subsubsection.4.3.6}
+\contentsline {subsection}{\numberline {4.4}Dispute}{13}{subsection.4.4}
+\contentsline {section}{\numberline {5}Steps}{14}{section.5}
+\contentsline {subsection}{\numberline {5.1}The Exchange Building}{14}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Proof of Concept}{14}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Minimum Viable Product}{14}{subsubsection.5.1.2}
+\contentsline {subsection}{\numberline {5.2}Early Adopters}{15}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Free interface for travelers.}{15}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Free interface for individual hosts.}{15}{subsubsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.3}Paid interface for hotels.}{15}{subsubsection.5.2.3}
+\contentsline {subsection}{\numberline {5.3}More Adopters}{15}{subsection.5.3}
